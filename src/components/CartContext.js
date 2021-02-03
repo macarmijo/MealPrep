@@ -1,4 +1,4 @@
-import React, {createContext} from 'react'
+import {createContext} from 'react'
 
 //me trae el Provider y el Consumer
 const CartContext = createContext([])

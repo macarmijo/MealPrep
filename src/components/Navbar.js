@@ -5,9 +5,7 @@ import './navbar.css'
 import DropdownNav from './DropdownNav';
 
 
-
 const Navbar = ()  => {
-
 
     return (
         <>

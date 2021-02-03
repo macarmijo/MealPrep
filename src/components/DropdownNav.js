@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import {Dropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-import { getFirestore } from '../firebaseConfig';
+// import { getFirestore } from '../firebaseConfig';
 
 
 const DropdownNav = () => {

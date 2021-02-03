@@ -8,9 +8,8 @@ const ItemListContainer = ({greeting}) => {
 
     const [items, setItems] = useState([]);
     const {id, categoryId} = useParams();
-
+  
     useEffect(() => {
-
 
         let query;
         categoryId?
@@ -24,12 +23,12 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <div className="itemList">
-        {id ? <h1>{id}</h1>
+        {categoryId ? <h1>{categoryId}</h1>
         :<h1>{greeting}</h1>  
         } 
           {items.length > 0 
-          ? <ItemList product = { items } /> 
-          : <h1 className="loading">Loading...</h1>}
+          ?<ItemList product = { items } /> 
+          :<h1 className="loading">Loading...</h1> }
       </div>
     )
 }
