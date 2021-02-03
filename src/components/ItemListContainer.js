@@ -7,7 +7,7 @@ import { firestore } from "../firebaseConfig";
 const ItemListContainer = ({greeting}) => {
 
     const [items, setItems] = useState([]);
-    const {id, categoryId} = useParams();
+    const { categoryId} = useParams();
   
     useEffect(() => {
 
@@ -19,7 +19,7 @@ const ItemListContainer = ({greeting}) => {
         query.then(({docs}) =>{
             setItems(docs.map( doc => ({id: doc.id, ...doc.data()})))
         })
-    }, [categoryId]);
+    }, []);
 
     return (
         <div className="itemList">

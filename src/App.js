@@ -21,9 +21,8 @@ const App = () => {
     return (
         <>
         <BrowserRouter>
-        <Header/>
-        {/* <CartState></CartState> */}
         <CartState>
+        <Header/>
         <Switch>
             <Route exact path="/">
                 <Main/>

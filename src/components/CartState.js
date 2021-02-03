@@ -12,13 +12,9 @@ import CartContext from './CartContext'
 const CartState = ({children}) => {
 
     const [cart, setCart] = useState([])
-    const [cantItems, setCantItems] = useState(0)
-    const [total, setTotal] = useState(0)
-    const [idOrden, setIdOrden] = useState([])
-    const [carritoEstado, setCarritoEstado] = useState(true);
 
 
-    const addToCart = ({item, cantidad}) => {
+    function addToCart(item, cantidad) {
 		setCart([
 			...cart,
 			{
@@ -38,6 +34,7 @@ const CartState = ({children}) => {
     const clearCart = () =>{
         setCart([])
     }
+
     const updateCantidad = (id, cantidad) =>{
         const oldCart = cart
         const newCart = oldCart.map(p => {
@@ -49,26 +46,29 @@ const CartState = ({children}) => {
         setCart( newCart )
     }
     
-    useEffect(() => {
-        setTotal(cart.reduce((accumulator, currentValue) => accumulator + (currentValue.item.price * currentValue.cantidad), 0));
-        setCantItems(cart.reduce((accumulator, currentValue) => accumulator + currentValue.cantidad, 0));
-    }, [cart])
-    
-       
+    const totalPrice = () => {
+        let contador = 0
+        cart.forEach(item => { contador = contador + (item.cantidad * item.price) })
+        return contador
+    }
+
+    const total = () => {
+        let contador = 0
+        cart.forEach(item => { contador = contador + item.cantidad })
+        return contador
+    }
+      
     return (
         <CartContext.Provider value={{
             addToCart, 
             isInCart, 
-            idOrden, 
-            setIdOrden, 
-            carritoEstado, 
-            setCarritoEstado, 
             deleteItem, 
             clearCart, 
-            updateCantidad, 
-            cantItems, 
-            cart, 
-            total
+            updateCantidad,  
+            cart,
+            total,
+            totalPrice,
+            quantity: cart.length
             }}>
             {children}
         </CartContext.Provider>
