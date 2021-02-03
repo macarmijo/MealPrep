@@ -1,0 +1,38 @@
+.titleDetail{
+    text-align:center;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 2px;
+    padding: 1% 0;
+    margin: 1% 0;
+}
+.itemDetail{
+    width:100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.itemImg{
+    width: 35vw;
+    border-radius:20px;
+}
+.itemBox{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10%; 
+}
+
+.itemDetail h4{
+text-decoration:none;
+font-size: 1em;
+}
+
+.description{
+    margin-top: 3%;
+    text-align: justify;
+    width: 40vw;
+    height: 20vh;
+    overflow:hidden;
+}

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&family=Nothing+You+Could+Do&family=Raleway:wght@200;300&display=swap');
+
+/* font-family: 'Libre Baskerville', serif;
+font-family: 'Nothing You Could Do', cursive;
+font-family: 'Raleway', sans-serif; */
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+  margin:0;
+}
+
+ul, ol, i{
+  list-style: none;
+  margin: 0 ;
+  padding: 0;
+}
+
+a{
+  display: inline-block;
+  text-decoration: none;
+  color:inherit;
+}
+
+  /* BODY */
+main{
+  height: 80vh;
+  display: flex;
+}
+.titleImg{
+  position: relative;
+  z-index: -1;
+  display: flex;
+  align-items: center;
+}
+
+.banner{
+  width: 100%;
+  height: 100vh;
+}
+.bannerRes{
+  display: none;
+}
+.title{
+  display: flex;
+  align-items: center;
+}
+
+.titleText{
+  position: absolute;
+  color: white;
+  margin-left: 20px;
+}
+.title h3{
+  top: 63%;
+}
+.mealButton{
+  top: 70%;
+  background: rgb(162, 157, 157);
+  border-radius: 20px;
+  padding: 10px;
+}
+.mealButton:hover{
+  background-color: rgb(38, 133, 101);
+}
+
+.itemList{
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* productos */
+.itemList h1{
+  font-size: 1.5em;
+  margin: 2% 0;
+  padding: 10px 0px;
+  border-top-style:solid;
+  border-bottom-style: solid;
+  border-color: black; 
+  width: 100vw;
+  text-align: center;
+}
+.loading{
+  text-align: center;
+}
+.moreInfo{
+  padding: 3%;
+  border-radius: 10px;
+}
+.moreInfo:hover{
+  font-size: 15px;
+  text-decoration: none;
+  background-color: rgb(215, 209, 184);
+}
+.products-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.one-product{
+  width: 20vw;
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  box-shadow: 2px 4px 9px -3px black;
+  position: relative;
+  z-index: 3;
+  padding: 10px;
+  border-radius: 10px;
+}
+.one-product h3{
+  color: black;
+  position: relative;
+  padding: 1%;
+}
+
+.one-productImg{
+  width: 100%;
+  margin-bottom: 5%;
+  border-radius: 10%;
+}
+.one-productImg:hover{
+  border-radius: 50%;
+}
+/* contador productos */
+.contador{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+.buttonProd{
+    background-color: rgba(70, 161, 147, 0.6);
+    border-style: none;
+    border-radius: 30px;
+    padding: 5px 10px;
+    position: relative;
+    margin: 0px 10px;
+}
+.addToCart{
+  margin-top:20px;
+  position: relative;
+  background-color: rgba(70, 161, 147, 0.6);
+  border-radius: 30px;
+  padding: 5px 10px;
+  
+}
+
+
+footer{
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color:white;
+}
+
+@media(max-width: 768px){
+    .listado{
+        font-size: 22px;
+        padding: 5px;
+        font-weight: bold;
+    } 
+    /* .lista button{
+      color: rgb(194, 31, 31);
+    } */
+
+    .banner{
+      display: none;
+    }
+    .bannerRes{
+      display:flex;
+      width: 100vw;
+      height: 100vh;
+    }
+    .title h1{
+      top:40%;
+    }
+    .title h3{
+      top: 48%;
+    }
+    .title button{
+      top: 54%;
+    }
+
+    /* Item List Container */
+    .products-container{
+      width: 100%;
+      height: 100vh;
+      background-color: white;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .one-product{
+      width:40%;
+      margin: 10px 10px 20px;
+      font-size: 15px;
+    }
+  
+    .one-product img{
+      width: 100%;
+    }
+  
+    .one-product a{
+      color: #ffffff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+    .one-product h2{
+      font-size: 25px;
+    }
+
+}

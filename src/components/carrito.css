@@ -1,0 +1,42 @@
+.cartTitle{
+    text-align: center;
+    margin-top: 10px;
+}
+.carritoBox{
+    /* display: inline-block;
+
+    margin:auto; */
+border: black solid;
+position: relative;
+box-shadow: 2px 4px 9px -3px black;
+width: 80%;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+
+.carritoTitle{
+    font-size: 18px;
+    text-align: center;
+    background-color: rgba(230, 223, 120, 0.6);
+}
+
+.imgCarrito{
+    width: 130px;
+    border-radius: 10px;
+}
+
+.carritoColumns{
+    display: flex;
+    width: 80vw;
+    justify-content: space-evenly;
+    border: black 3px dotted;
+}
+
+
+.carritoFoot{
+    display: flex;
+    margin: 10px 0px;
+    ;
+}
