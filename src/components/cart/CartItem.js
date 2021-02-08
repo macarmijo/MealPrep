@@ -3,8 +3,9 @@ import CartContext from '../../context/CartContext'
 
 const CartItem = ({item, cantidad}) => {
 
-    const {id, title, imagen, price, stock}=item
-    const {deleteItem, updateCantidad}= useContext(CartContext)
+    // const {id, title, imagen, price, stock}=item
+    const {deleteItem, updateCantidad, totalPrice}= useContext(CartContext)
+
 
     return (
          <>
@@ -29,7 +30,7 @@ const CartItem = ({item, cantidad}) => {
         <tfoot>
             <tr className="carritoFoot">
             <th scope="row" colspan="2">&nbsp;&nbsp;&nbsp;Total</th>
-            <td colspan="2">$ {item.item.price * item.cantidad }</td>
+            <td colspan="2">$ {totalPrice(item.item.price, item.cantidad)}</td>
             </tr>
         </tfoot>
         </table>

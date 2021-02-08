@@ -5,7 +5,7 @@ import CartContext from '../../context/CartContext'
 
 const Carrito = () => {
 
-    const { cart, totalPrice } = useContext(CartContext)
+    const { cart } = useContext(CartContext)
     // console.log(cart.length);
 
     return (
@@ -18,7 +18,7 @@ const Carrito = () => {
                     <CartItem key={carrito.id} item={carrito.item} cantidad={carrito.cantidad}/>
                 ]))
                 }
-                {/* {totalPrice()} */}
+                
                 </>
                 :
                 <p>No hay items</p>

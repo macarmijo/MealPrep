@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext'
 const CartWidget = () => {
 
     const {quantity, total} = useContext(CartContext)
-console.log(total)
+
     return (
         <>
             {quantity > 0 

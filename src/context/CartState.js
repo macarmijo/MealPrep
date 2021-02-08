@@ -1,12 +1,4 @@
-// CartContext.js con el context y su custom provider (Impórtalo en App.js)
-// Al clickear comprar en ItemDetail se debe guardar en el CartContext el producto y su cantidad en forma de objeto { item: {} , quantity }
-// Detalle importante: CartContext debe tener la lógica incorporada de no aceptar duplicados y mantener su consistencia.
-// Métodos recomendados: 
-// addItem(item, quantity) // agregar cierta cantidad de un ítem al carrito
-// removeItem(itemId) // Remover un item del cart por usando su id
-// clear() // Remover todos los items
-// isInCart: (id) => true|false
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import CartContext from './CartContext'
 
 const CartState = ({children}) => {
@@ -22,8 +14,8 @@ const CartState = ({children}) => {
 			}
         ])
     }
-    const isInCart = id => {
-        let existe = cart.find(producto => producto.id === id)
+    const isInCart = (id)=> {
+        let existe = cart.find(producto => producto.item.item.id === id)
         return existe?true:false
     }
 
@@ -46,10 +38,15 @@ const CartState = ({children}) => {
         setCart( newCart )
     }
     
-    const totalPrice = () => {
+    function totalPrice(price, cantidad){
         let contador = 0
-        cart.forEach(item => { contador = contador + (item.item.cantidad * item.item.price) })
+        cart.forEach(item => { contador = price * cantidad })
         return contador
+    }
+    function totalCarrito(price, cantidad){
+        let cont = 0
+        cart.forEach(carrito => (cont = cont + totalPrice(price, cantidad)))
+        return cont
     }
 
     const total = () => {
@@ -68,6 +65,7 @@ const CartState = ({children}) => {
             cart,
             total,
             totalPrice,
+            totalCarrito,
             quantity: cart.length
             }}>
             {children}
