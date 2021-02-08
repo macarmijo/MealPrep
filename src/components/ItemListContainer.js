@@ -7,28 +7,33 @@ import { firestore } from "../firebaseConfig";
 const ItemListContainer = ({greeting}) => {
 
     const [items, setItems] = useState([]);
-    const { categoryId} = useParams();
+    const { categoryId } = useParams();
   
     useEffect(() => {
 
         let query;
         categoryId?
-            query = firestore.collection("items").where("categoryId","==", categoryId).get() :
-            query = firestore.collection("items").get()
+            query = firestore.collection("items").where("categoryId","==", categoryId).get():
+            query = firestore.collection("items").get();
 
         query.then(({docs}) =>{
             setItems(docs.map( doc => ({id: doc.id, ...doc.data()})))
         })
-    }, []);
+    });
 
     return (
         <div className="itemList">
-        {categoryId ? <h1>{categoryId}</h1>
-        :<h1>{greeting}</h1>  
+        {categoryId ? 
+        <>
+        <h1>{categoryId}</h1>
+        <ItemList product = { items } /> 
+        </>
+        :<><h1>{greeting}</h1> 
+        <ItemList product = { items } /> </> 
         } 
-          {items.length > 0 
-          ?<ItemList product = { items } /> 
-          :<h1 className="loading">Loading...</h1> }
+          {/* {items.length > 0 
+          ? <ItemList product = { items } /> 
+          : <h1 className="loading">Loading...</h1>} */}
       </div>
     )
 }

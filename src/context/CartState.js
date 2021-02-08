@@ -13,7 +13,6 @@ const CartState = ({children}) => {
 
     const [cart, setCart] = useState([])
 
-
     function addToCart(item, cantidad) {
 		setCart([
 			...cart,
@@ -24,11 +23,12 @@ const CartState = ({children}) => {
         ])
     }
     const isInCart = id => {
-        let existe = cart.find(producto => producto.item.id === id)
+        let existe = cart.find(producto => producto.id === id)
         return existe?true:false
     }
-    const deleteItem = id => {
-        const nuevoCart = cart.filter(producto => producto.item.id !== id)
+
+    function deleteItem(id){
+        const nuevoCart = cart.filter(producto => producto.item.item.id !== id)
         setCart(nuevoCart)
     }
     const clearCart = () =>{
@@ -48,13 +48,13 @@ const CartState = ({children}) => {
     
     const totalPrice = () => {
         let contador = 0
-        cart.forEach(item => { contador = contador + (item.cantidad * item.price) })
+        cart.forEach(item => { contador = contador + (item.item.cantidad * item.item.price) })
         return contador
     }
 
     const total = () => {
         let contador = 0
-        cart.forEach(item => { contador = contador + item.cantidad })
+        cart.forEach(item => { contador = contador + (item.item.cantidad) })
         return contador
     }
       

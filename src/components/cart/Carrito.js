@@ -1,11 +1,11 @@
 import React, {useContext} from 'react'
 import CartItem  from './CartItem'
 import "./carrito.css"
-import CartContext from './CartContext'
+import CartContext from '../../context/CartContext'
 
 const Carrito = () => {
 
-    const { cart } = useContext(CartContext)
+    const { cart, totalPrice } = useContext(CartContext)
     // console.log(cart.length);
 
     return (
@@ -18,6 +18,7 @@ const Carrito = () => {
                     <CartItem key={carrito.id} item={carrito.item} cantidad={carrito.cantidad}/>
                 ]))
                 }
+                {/* {totalPrice()} */}
                 </>
                 :
                 <p>No hay items</p>

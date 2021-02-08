@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
-import CartContext from './CartContext'
+import CartContext from '../context/CartContext'
 
 
 const ItemCount = ({item, addToCart}) => {
@@ -41,7 +41,7 @@ const ItemCount = ({item, addToCart}) => {
             </div>    
             <div>
                 <button className="addToCart" 
-                onClick={ () => {addToCart({ item: item, cantidad: contDetail})}}>
+                onClick={ () => addToCart({ item: item, cantidad: contDetail})}>
                     add to cart</button>
             </div>
             </>}
