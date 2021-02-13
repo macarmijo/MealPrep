@@ -38,18 +38,21 @@ const CartState = ({children}) => {
         setCart( newCart )
     }
     
-    function totalPrice(price, cantidad){
+    function subtotalPrice(price, cantidad){
         let contador = 0
         cart.forEach(item => { contador = price * cantidad })
         return contador
     }
-    function totalCarrito(price, cantidad){
+
+    function totalCarrito(){
         let cont = 0
-        cart.forEach(carrito => (cont = cont + totalPrice(price, cantidad)))
+        const cartPrice = cart.map(p => p.item.item.price * p.item.cantidad) 
+
+        cartPrice.forEach(subtotal => {cont = cont + subtotal})
         return cont
     }
 
-    const total = () => {
+    const totalItems = () => {
         let contador = 0
         cart.forEach(item => { contador = contador + (item.item.cantidad) })
         return contador
@@ -63,8 +66,8 @@ const CartState = ({children}) => {
             clearCart, 
             updateCantidad,  
             cart,
-            total,
-            totalPrice,
+            totalItems,
+            subtotalPrice,
             totalCarrito,
             quantity: cart.length
             }}>

@@ -5,14 +5,14 @@ import CartContext from '../../context/CartContext'
 
 const CartWidget = () => {
 
-    const {quantity, total} = useContext(CartContext)
+    const {quantity, totalItems} = useContext(CartContext)
 
     return (
         <>
             {quantity > 0 
             && 
             <>
-            <p className="listado">{total()}</p>
+            <p className="listado">{totalItems()}</p>
             <Link to="/cart">
             <button className="listado"><FontAwesomeIcon icon="shopping-cart" /></button>
             </Link>

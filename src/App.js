@@ -10,6 +10,8 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Carrito from './components/cart/Carrito'
 import AboutMe from './components/AboutMe'
 import CartState from './context/CartState'
+import BuyingForm from './BuyingForm'
+
 
 library.add( faShoppingCart, faCoffee )
 
@@ -44,6 +46,9 @@ const App = () => {
             </Route>
             <Route exact path="/aboutMe">
                 <AboutMe/>
+            </Route>
+            <Route exact path="/BuyingForm">
+                <BuyingForm/>
             </Route>
         </Switch>
         </CartState>

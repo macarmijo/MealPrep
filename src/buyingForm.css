@@ -1,0 +1,32 @@
+#first-name{
+    border: lightblue solid;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+#email{
+    border: lightblue solid;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+#phone{
+    border: lightblue solid;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.form-firebase{
+border: lightblue solid ;
+border-radius: 1rem;
+width: 23rem;
+height: 18rem;
+    margin-top: 6rem;   
+ margin-left: 30rem;
+ padding-left: 1rem;
+ margin-bottom: 1rem;
+ padding-top: 1rem;
+
+}
+.firebase-button{
+    background-color: lightblue;
+    border:  white solid;
+    margin-top: 1rem;
+}

@@ -23,6 +23,11 @@ const ItemCount = ({item, addToCart}) => {
         }
     }
 
+    const onAdd = () => {
+        const add = addToCart({ item: item, cantidad: contDetail})
+        return  add
+    }
+    
     return (
         <>
             { existeItem ?
@@ -41,7 +46,7 @@ const ItemCount = ({item, addToCart}) => {
             </div>    
             <div>
                 <button className="addToCart" 
-                onClick={ () => addToCart({ item: item, cantidad: contDetail})}>
+                onClick={onAdd}>
                     add to cart</button>
             </div>
             </>}
