@@ -28,18 +28,18 @@ const BuyingForm = () => {
         console.log(order);
         
         orders.add(order)
-        // .then(({ id }) => {
-        //   alert("order number:" + id)
-        // })
-        .then((response)=> {
-            console.log(response)
+        .then(({ id }) => {
+          alert("order number:" + id)
         })
-        // .then(() => {
-        //     clearCart();
-        //     setName("");
-        //     setEmail("");
-        //     setPhone("");
+        // .then((response)=> {
+        //     console.log(response)
         // })
+        .then(() => {
+            clearCart();
+            setName("");
+            setEmail("");
+            setPhone("");
+        })
         .catch( err => {
           console.log(err)
         })

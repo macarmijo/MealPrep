@@ -10,13 +10,13 @@ const CartState = ({children}) => {
 			...cart,
 			{
                 item: item,
-				cantidad: cantidad
+				cantidad: item.cantidad
 			}
         ])
     }
     const isInCart = (id)=> {
         let existe = cart.find(producto => producto.item.item.id === id)
-        return existe?true:false
+        return existe
     }
 
     function deleteItem(id){

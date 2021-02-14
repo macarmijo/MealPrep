@@ -11,9 +11,13 @@ const Carrito = () => {
     console.log(cart);
 
     const clear = () => {
-        alert('su carrito ha sido eliminado')
-        return clearCart()
+        const confirma = prompt('Confirma que quiere eliminar TODOS los productos de su carrito?: si/no')
+        if(confirma === 'si'){
+            alert('Su carrito ha sido eliminado con éxito!')
+            return clearCart()
+        }
     }
+
 
     // console.log(reinicia)
 
