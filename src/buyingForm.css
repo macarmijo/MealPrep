@@ -1,24 +1,11 @@
-#name{
+#name, #email, #phone{
     background-color: rgb(38, 133, 101, 0.2);
     margin-left: 1rem;
     margin-bottom: 1rem;
     border: rgb(38, 133, 101, 0.2);
     border-radius: 2%;
 }
-#email{
-    background-color: rgb(38, 133, 101, 0.2);
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    border: rgb(38, 133, 101, 0.2);
-    border-radius: 2%;
-}
-#phone{
-    background-color: rgb(38, 133, 101, 0.2);
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-    border: rgb(38, 133, 101, 0.2);
-    border-radius: 2%;
-}
+
 .formBox{
     display: flex;
     flex-direction: column;
