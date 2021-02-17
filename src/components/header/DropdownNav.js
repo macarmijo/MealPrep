@@ -1,35 +1,55 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {Dropdown} from 'react-bootstrap';
 import { Link } from 'react-router-dom'
-// import { getFirestore } from '../firebaseConfig';
+import { firestore } from '../../firebaseConfig'
+
 
 
 const DropdownNav = () => {
     
-    
+    // const [categorias, setCategorias] = useState([])
+
+    // useEffect(() => {
+    //     const collection = firestore.collection('category')
+    //     const query = collection.get()
+
+    //     query
+    //     .then(({docs}) => {
+    //         setCategorias(docs.map(doc => ({
+    //             id: doc.id, ...doc.data()
+    //         }))) 
+    //     })
+    //     .catch((err)=>{
+    //             console.log(err)
+    //     })
+
+    //     }, [])
+    // no pude llegar a probar este codigo porque se me expiro la cuota de firebase
+    // aun asi, arme un array simulando que asi obtengo los datos de la base de datos
+    // --> el codigo deberia funcionar con firebase y sin el array 
+
+    const categorias = [{key: 'plantBased', description:'Plant Based'}, {key: 'proteinBased', description:'Protein Based'}, {key: 'dessert', description:'Dessert'}, {key: 'breakfast', description:'Breakfast'}]
+
     return (
         <>
             <Dropdown>
-                <a className="listado"><Link to="/ItemListContainer">Meal Preps</Link>
-                <Dropdown.Toggle className="flechaCateg"/>
-                </a>
+            <Dropdown.Toggle className="listado" variant="secondary" id="dropdown-basic">
+                Meal Preps
+            </Dropdown.Toggle>
 
-                <Dropdown.Menu className="MenuListado">
-                   
-                    <Dropdown.Item className="categories" >
-                        <Link to={`/category/Breakfast`}><a>Breakfast</a></Link> 
-                    </Dropdown.Item>
-                    <Dropdown.Item className="categories">
-                        <Link to={`/category/Dessert`}><a>Dessert</a></Link>
-                    </Dropdown.Item>
-                    <Dropdown.Item className="categories">
-                        <Link to={`/category/PlantBased`}><a>Plant Based</a></Link>
-                    </Dropdown.Item>
-                    <Dropdown.Item className="categories"> 
-                        <Link to={`/category/ProteinBased`}><a>Protein Based</a></Link> 
-                    </Dropdown.Item>
-        
-                </Dropdown.Menu>
+            <Dropdown.Menu className="MenuListado">
+                {categorias.map(categoria => {
+                            return(
+                            <Dropdown.Item className='categories'>
+                            <Link to={'/category/'+ categoria.key} className="cat">{categoria.description}</Link>
+                            </Dropdown.Item>
+                            )    
+                        })                 
+                    }
+                <Dropdown.Item className="categories">
+                <Link to="/ItemListContainer" className="cat">All</Link>
+                </Dropdown.Item>
+            </Dropdown.Menu>
             </Dropdown>
         </>
     )

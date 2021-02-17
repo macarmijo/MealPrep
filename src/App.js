@@ -12,7 +12,6 @@ import AboutMe from './components/AboutMe'
 import CartState from './context/CartState'
 import BuyingForm from './BuyingForm'
 
-
 library.add( faShoppingCart, faCoffee )
 
 const App = () => {

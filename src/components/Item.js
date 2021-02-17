@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 
-const Item = ({title, image, id, }) => {
+const Item = ({title, image, id}) => {
     return (
             <article className="one-product">
                 <h4>{title}</h4>

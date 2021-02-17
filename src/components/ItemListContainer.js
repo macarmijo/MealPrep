@@ -25,15 +25,11 @@ const ItemListContainer = ({greeting}) => {
         <div className="itemList">
         {categoryId ? 
         <>
-        <h1>{categoryId}</h1>
         <ItemList product = { items } /> 
         </>
         :<><h1>{greeting}</h1> 
         <ItemList product = { items } /> </> 
         } 
-          {/* {items.length > 0 
-          ? <ItemList product = { items } /> 
-          : <h1 className="loading">Loading...</h1>} */}
       </div>
     )
 }

@@ -25,11 +25,11 @@ const BuyingForm = () => {
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: totalPrice,
             };
-        console.log(order);
+        // console.log(order);
         
         orders.add(order)
         .then(({ id }) => {
-          alert("order number:" + id)
+          alert("Success! your order number is:" + id)
         })
         // .then((response)=> {
         //     console.log(response)
@@ -47,22 +47,22 @@ const BuyingForm = () => {
 
 
     return (
-        <div>
-        <form className="form-firebase">
+        <div className="formBox">
+        <form className="form">
           <h2>Datos de compra</h2>
-          <ul className="flex-outer">
+          <ul>
             <li>
-              <label htmlFor="first-name">Full name: </label>
+              <label>Full name: </label>
               <input
                 type="text"
-                id="first-name"
+                id="name"
                 placeholder="Nombre"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </li>
             <li>
-              <label htmlFor="email">Email: </label>
+              <label>Email: </label>
               <input
                 type="email"
                 id="email"
@@ -72,7 +72,7 @@ const BuyingForm = () => {
               />
             </li>
             <li>
-              <label htmlFor="phone">Phone: </label>
+              <label>Phone: </label>
               <input
                 type="tel"
                 id="phone"
@@ -81,9 +81,9 @@ const BuyingForm = () => {
                 onChange={(e) => setPhone(e.target.value)}
               />
             </li>
-  
+            
             <Link to="/">
-              <button className="firebase-button" type="submit" onClick={Order}>
+              <button className="formButton" type="submit" onClick={Order}>
                 Comprar
               </button>
             </Link>

@@ -7,3 +7,9 @@ Meal Prep e-commerce | React.js | Coderhouse
 2. Para volver al _Home_ click en _Home_ en Navbar or _Khyl Porcelli_ en el Header
 3. Para añadir al carrito Primero click en _more info_ despues _add to cart_ en the los detalles del producto
 4. Para ver mas detalles de un producto click in _more info_ o en la Imagen del mismo
+
+### Detalles
+1. La web no esta armada para ser responsive aun
+2. Falta maquetado
+
+Proximamente lo terminaré - Wait for it - 
