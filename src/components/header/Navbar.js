@@ -1,21 +1,19 @@
 import React from 'react'
 import CartWidget from './CartWidget'
-import {Dropdown} from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom'
+import {  NavLink } from 'react-router-dom'
 import './navbar.css'
 import DropdownNav from './DropdownNav';
 
 
 const Navbar = ()  => {
 
-    const categorias = [{key: 'plantBased', description:'Plant Based'}, {key: 'proteinBased', description:'Protein Based'}, {key: 'dessert', description:'Dessert'}, {key: 'breakfast', description:'Breakfast'}]
 
     return (
         <>
         <nav>
             <div className="lista">
-                <Link to="/" className="listado">Home</Link>
-                <Link to="/aboutMe" className="listado">About Me</Link>
+                <NavLink to="/" className="listado">Home</NavLink>
+                <NavLink to="/aboutMe" className="listado">About Me</NavLink>
                 <DropdownNav/>              
                 <CartWidget/>
             </div>

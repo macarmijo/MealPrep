@@ -6,7 +6,7 @@ import CartContext from '../../context/CartContext'
 
 const Carrito = () => {
 
-    // const [reinicia, setReinicia] = useState(false)
+
     const { cart, totalCarrito, clearCart } = useContext(CartContext)
     console.log(cart);
 
@@ -18,8 +18,6 @@ const Carrito = () => {
         }
     }
 
-
-    // console.log(reinicia)
 
     return (
         <>
@@ -47,7 +45,6 @@ const Carrito = () => {
                     </td>
 
                     <td>
-                    {/* {reinicia ? alert('Su carrito ha sido borrado con exito') : <></>} */}
                         <Link to="/" onClick={clear} className="btn btn-danger">
                         Reiniciar Carrito
                         </Link>

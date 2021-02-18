@@ -32,7 +32,7 @@ const ItemCount = ({item, addToCart}) => {
         <>
             { existeItem ?
             <>
-            <h4>{"agregaste"+ " " + contDetail + " " + name + " al carrito" }</h4>
+            <h4>{'agregaste '+ contDetail + ' ' + name + ' al carrito'}</h4>
             <Link to="/cart">
                 <button className="addToCart">ir al carrito</button>
             </Link>
