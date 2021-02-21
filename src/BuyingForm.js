@@ -11,6 +11,7 @@ const BuyingForm = () => {
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
+    const [confirmEmail, setConfirmEmail] = useState("");
     const [phone, setPhone] = useState("");
     const { cart, totalCarrito, clearCart } = useContext(CartContext);
 
@@ -45,14 +46,23 @@ const BuyingForm = () => {
         })
     }
 
+    const mailConfirm = () =>{
+      if(email !== "" && email === confirmEmail){
+        return true
+      }else{
+        return false
+      }
+    }
+
 
     return (
         <div className="formBox">
-        <form className="form">
+        {cart.length > 0 ? (
+          <form className="form">
           <h2>Datos de compra</h2>
           <ul>
             <li>
-              <label>Full name: </label>
+              <label>Full name </label>
               <input
                 type="text"
                 id="name"
@@ -62,7 +72,7 @@ const BuyingForm = () => {
               />
             </li>
             <li>
-              <label>Email: </label>
+              <label>Email </label>
               <input
                 type="email"
                 id="email"
@@ -72,7 +82,17 @@ const BuyingForm = () => {
               />
             </li>
             <li>
-              <label>Phone: </label>
+              <label>Confirm Email </label>
+              <input
+                type="email"
+                id="email"
+                placeholder="example@email.com"
+                value={confirmEmail}
+                onChange={(e) => setConfirmEmail(e.target.value)}
+              />
+            </li>
+            <li>
+              <label>Phone </label>
               <input
                 type="tel"
                 id="phone"
@@ -83,12 +103,18 @@ const BuyingForm = () => {
             </li>
             
             <Link to="/">
-              <button className="formButton" type="submit" onClick={Order}>
+              <button disabled={!mailConfirm()} className="formButton" type="submit" onClick={Order}>
                 Comprar
               </button>
             </Link>
           </ul>
         </form>
+        ) : (
+          <Link to="/ItemListContainer" className="btn btn-warning">
+            Seguir Comprando
+          </Link>
+        )
+        }
       </div>
     )
 }
