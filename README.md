@@ -13,3 +13,8 @@ Meal Prep e-commerce | React.js | Coderhouse
 2. Falta maquetado
 
 Proximamente lo terminaré - Wait for it - 
+
+
+### Resultado de la web
+![meal prep web gif](https://media.giphy.com/media/DCjko1i5ba09SRXo8e/giphy.gif)
+
